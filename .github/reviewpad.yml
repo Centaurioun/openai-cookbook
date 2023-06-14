@@ -131,7 +131,7 @@ workflows:
       # Fail Reviewpad check on pull requests that modify any LICENSE;
       - if: $hasFilePattern("**/LICENSE*")
         then: $fail("License files cannot be modified")
-    
+
   # Auto-merge based on file properties
   - name: auto-merge-file-prop
     description: Ship process - bypass the review and merge with rebase
@@ -149,8 +149,8 @@ workflows:
       then:
         - $addLabel("ship")
         - $merge("rebase")
-        
-  # Auto-merge small pull requests        
+
+  # Auto-merge small pull requests
   - name: auto-merge-small-pr
     description: Ship process - bypass the review and merge with rebase
     run:
